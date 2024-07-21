@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Day 9 DOM Manipulation</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+
+        #myElement {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <div class="container">
+            <label for="" id="labelid">We are at Day 9 of 30Days Javascript challenge</label>
+            <button onclick="btnonclick()">Press button to change label content using javascript</button>
+        </div>
+        <button onclick="btnforbgchange()">Press button for change bacground color</button>
+        <button onclick="btnforcreateandappendelement()">Press button for Creating and Appending Elements</button>
+
+        <ul id="myList">
+            <li id="item1">Item 1</li>
+            <li>Item 2</li>
+        </ul>
+
+        <button onclick="addListItem()">Add List Item</button>
+
+        <button onclick="removeListItem()">Remove any element</button>
+
+        <button onclick="removeLastChild()">Remove Last Item</button>
+
+        <div>
+
+            <img id="myImage" src="old_image.jpg" alt="Old Image" width="300">
+            <button onclick="changeImageSource()">Change Image Source</button>
+        </div>
+
+        <div>
+            <p id="myParagraph">This is a paragraph that can be highlighted.</p>
+            <button onclick="addHighlight()">Add Highlight</button>
+            <button onclick="removeHighlight()">Remove Highlight</button>
+        </div>
+
+        <div>
+            <p id="paragraph">This is the original text.</p>
+            <button id="myButton">Change Text</button>
+        </div>
+
+        <div id="myElement">Hover over me!</div>
+
+    </div>
+    <script src="App.js"></script>
+</body>
+
+</html>
