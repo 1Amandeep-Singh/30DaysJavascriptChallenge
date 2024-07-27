@@ -17,14 +17,14 @@ class Person {
     return "Hello, this is a generic greeting from the Person class.";
   }
 
-   // Getter for full name
-   get fullName() {
+  // Getter for full name
+  get fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
 
-   // Setter for full name
-   set fullName(name) {
-    const [first, last] = name.split(' ');
+  // Setter for full name
+  set fullName(name) {
+    const [first, last] = name.split(" ");
     this.firstName = first;
     this.lastName = last;
   }
@@ -51,7 +51,7 @@ person.updateAge(96);
 //Task 3: Define a class Student that extends the Person class. Add a property studentId and a method to return the student ID.
 //Create an instance of the Student class and log the student ID
 class Student extends Person {
-    static studentCount = 0; // Static property to keep track of the number of students
+  static studentCount = 0; // Static property to keep track of the number of students
 
   constructor(name, age, studentId) {
     super(name, age);
@@ -61,7 +61,7 @@ class Student extends Person {
   getStudentId() {
     return `Student ID: ${this.studentId}`;
   }
-  
+
   static getStudentCount() {
     return `Total number of students: ${Student.studentCount}`;
   }
@@ -75,10 +75,9 @@ console.log(student.getStudentId());
 //Task 4: Override the greeting method in the Student class to include the Student ID in the message.
 //Log the overridden greeting message
 
-
-Student.prototype.greetmessage = function(){
-    return `Student name is: ${this.name} and Student ID: ${this.studentId}`;
-}
+Student.prototype.greetmessage = function () {
+  return `Student name is: ${this.name} and Student ID: ${this.studentId}`;
+};
 
 console.log(student.greetmessage());
 
@@ -114,7 +113,7 @@ console.log(Student.getStudentCount());
 const personname = new Person("Amandeep", "Singh", 30);
 
 // Log the full name using the getter
-console.log(personname.fullName);  // Output: John Doe
+console.log(personname.fullName); // Output: John Doe
 
 //Task 8: Add a setter method to the Person class to update the name properties (firstName and lastName).
 //Update the name using the setter and log the updated full name
@@ -123,14 +122,49 @@ console.log(personname.fullName);  // Output: John Doe
 personname.fullName = "Khalsa Aman";
 
 // Log the updated full name using the getter
-console.log(personname.fullName);  // Output: Jane Smith
+console.log(personname.fullName); // Output: Jane Smith
 
 //Activity 5: Private Fields (Optional)
 
 //Task 9: Define a class Account with private fields for balance and a method to deposit and withdraw money.
 //Ensure that the balance can only be updated through these methods
 
+class Account {
+  #balance; //private field
+  constructor() {
+    this.#balance = 0;
+  }
+
+  //Method to deposit money into account
+  depositMoney(amount) {
+    if (amount > 0) {
+      this.#balance += amount;
+      console.log(`Deposited : ${amount}. New Balance: ${this.#balance}`);
+    } else console.log("Enter valid amount.");
+  }
+
+  //Method to withdraw money from the account
+  withdrawMoney(amount) {
+    if (amount > 0) {
+      if (amount <= this.#balance)
+        console.log(
+          `Withdraw amount: ${amount}. Balance amount: ${this.#balance}`
+        );
+      else console.log("Insufficient balance.");
+    } else console.log("Withdraw Failed");
+  }
+
+  balanceInfo(){
+    return this.#balance;
+  }
+}
+
+const myaccount = new Account(193);
+myaccount.withdrawMoney(200);
+
 //Task 10: Create an instance of the Account class and test the deposit and withdraw methods,
 //logging the balance after each operation
+
+console.log(`Current balance: ${myaccount.balanceInfo()}`);
 
 //Acitivity 5 end
