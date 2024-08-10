@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Social Media Dashboard</h1>
+            <nav>
+                <a href="#login">Login</a>
+                <a href="#posts">Posts</a>
+            </nav>
+        </header>
+
+        <section id="login">
+            <!-- Login Form Will Go Here -->
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="posts">
+            <div class="post-form">
+                <!-- Post Form Will Go Here -->
+                <form id="post-form">
+                    <label for="post-text">Post Text:</label>
+                    <textarea id="post-text" name="post-text" rows="4" required></textarea>
+
+                    <label for="post-image">Image URL:</label>
+                    <input type="url" id="post-image" name="post-image">
+
+                    <button type="submit">Create Post</button>
+                </form>
+            </div>
+            <div class="post-feed">
+                <!-- Post Feed Will Go Here -->
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
